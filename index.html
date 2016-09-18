@@ -1,95 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Title</title>
-    <meta name="format-detection" content="telephone=yes"/>
-    <style>
-        *{
-            margin:0;padding:0;
-            font-size: 12px;
-            font-family: 'Microsoft YaHei', "微软雅黑", "MicrosoftJhengHei", "华文细黑", "Helvetica", "Arial", "sans-serif";
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="css/all.css"/>
+		<link rel="stylesheet" type="text/css" href="css/shenfenrenzhen.css">
+		<title>身份认证</title>
+	</head>
+	<body class="bg_f5f5f9">
+		<div class="width_100">
+			<img src="img/shengfenrenzheng_top.png" width="98%" />
+		</div>
+		<div class="box width_100 clearfix" id="box">
+			<div class="img_box border-radius_5" onclick="blo(this)" style="overflow:hidden"style="overflow:hidden">
+                <img src="img/shangye.png" width="100%" height="100%" class="jz" />
+            </div>
+            <div class="img_box border-radius_5" onclick="blo(this)" style="overflow:hidden">
+                <img src="img/jiaqianxian.png" width="100%" height="100%" class="jz" />
+            </div>
+            <div class="img_box border-radius_5" onclick="blo(this)">
+                <img src="img/pidan.png" width="100%"  height="100%" class="jz" />
+            </div>
+            <div class="img_box border-radius_5" onclick="blo(this)">
+                <img src="img/shengfengzhen_fan.png" width="100%" height="100%" class="jz" />
+            </div>
+            <div class="img_box border-radius_5" onclick="blo(this)">
+                <img src="img/shengfengzhen_fan.png" width="100%" height="100%" class="jz" />
+            </div>
+            <div class="img_box border-radius_5" onclick="blo(this)">
+                <img src="img/shengfengzhen_fan.png" width="100%" height="100%" class="jz" />
+            </div>
+		</div>
+        <div class="width_100 myfixed" style="bottom:0">
+            <div class="font16 color_fff height_div_40 bg_78baff text_center margin_top10 bukeyong" id="shangchuan_btn">上传完成</div>
+        </div>
+        <div class="mask" id="mask">
+            <div class=" zhezhao border-radius_10 text_center font16 color_007aff">
+                <p class="width_90 margin_auto height_div_40 bg_fff">拍照</p>
+                <div>
+                    <input id="input" accept="image/*" capture="camera" onchange='PreviewImage(this)' style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0" >
+                    <p class="width_90 margin_auto height_div_40 bg_fff margin_top3">从相册中选取</p>
+                </div>
+            </div>
+            <div class="bg_fff width_90 margin_auto border-radius_10 zhezhao_qxidth height_div_40 text_center font16 color_007aff" id="qx" onclick="qx()">取消</div>
+        </div>
+	</body>
+    <script>
+        var mask=document.getElementById('mask');
+        var box=document.getElementById('box');
+        var shangchuan_btn=document.getElementById('shangchuan_btn');
+        var img=null,count=0;
+        function blo(a){
+            img= a.getElementsByTagName("img")[0];
+            mask.style.display="block";
         }
-        h2,h3{
-            font-size:14px;
+        function qx(){
+            mask.style.display="none";
+            img=null;
         }
-        a{
-            color: #3B9BFF;
-            text-decoration: none;
+        //上传图片
+        function PreviewImage(imgFile) {
+            var filextension = imgFile.value.substring(imgFile.value.lastIndexOf("."), imgFile.value.length);
+//			获取扩展名
+            filextension = filextension.toLowerCase();
+            if ((filextension != '.jpg') && (filextension != '.gif') && (filextension != '.jpeg') && (filextension != '.png') && (filextension != '.bmp')) {
+                alert("您上传的图片格式不正确!");
+            } else {
+                var path;
+                if(document.all)//IE
+                {
+                    //imgFile.select();
+                    path = document.selection.createRange().text;
+                }
+                else
+                {
+                    path=window.URL.createObjectURL(imgFile.files[0]);// FF 7.0
+                    img.src=path;
+                    img=null;
+                        panduan(6);
+                }
+            }
+            qx();
         }
-    </style>
-</head>
-<body>
-<h2>常见问题：</h2>
-<br/>
-<h3>1、什么是趣车险？</h3>
-<p>
-    趣车险是一款提供汽车保险分期服务的汽车金融类产品，用户可通过微信搜索“趣车险”，关注微信公众号。用户注册后可通过在线申请汽车保险分期还款，方便快捷，以满足用户分期购买汽车保险的需求。趣车险的分期模式是充分减轻还款压力的一种新型的分期模式。</p>
-<h3>2、什么是交强险、车船税？</h3>
-<p>“交强险”是由保险公司对被保险机动车发生道路交通事故造成受害人（不包括本车人员和被保险人）的人身伤亡、财产损失，在责任限额内予以赔偿的强制性责任保险，属于责任保险的一种。“车船税”是指对在我国境内应依法到公安、交通、农业、渔业、军事等管理部门办理登记的车辆、船舶，根据其种类，按照规定的计税依据和年税额标准计算征收的一种财产税。从2007年7月1日开始，有车族需要在投保交强险时缴纳车船税。</p>
-<h3>3、什么是商业险？</h3>
-<p>车险分“交强险”和“商业险”，交强险是国家强制规定，车辆必须购买的。商业险因车而异，用户可根据自身需求选择合适的险种。</p>
-<h3>4、什么是金融信息服务费？</h3>
-<p>金融信息服务费指代收保险手续费。</p>
-<h3>5、如何申请保险分期？</h3>
-<p>第一步：关注“趣车险”微信公众号；</p>
-<p> 第二步：填写手机号进行注册；</p>
-<p> 第三步：联系客户经理，输入机构编号，选择分期类型；</p>
-<p> 第四步：提交相关个人信息及保单/批单信息，申请完成。</p>
-<h3>6、如何注册/登录？</h3>
-<p>微信搜索“趣车险”并关注公众号，点击申请分期，输入手机号，点击获取验证码，填入验证码即可注册/登录。</p>
-<h3>7、手机号无法收到短信验证码</h3>
-<p>如果长时间收不到短信验证码，可能是以下原因导致：<br/>
-    原因1、获取次数超限<br/>
-    解决方法：每天只能获取三次验证码，如果今日已超过次数请明天再尝试。<br/>
-    原因2、手机业务不支持<br/>
-    解决方法：目前已支持中国三大移动运营商的所有号段。但西藏、新疆、港澳台及海外手机号码会受到手机服务运营商业务的限制，而无法进行手机业务办理，建议您更换其他手机号码尝试。<br/>
-    原因3、手机安全软件拦截（针对已安装安全软件的智能手机用户）<br/>
-    解决方法：打开手机安全软件，暂时关闭拦截功能，然后再次尝试获取验证码。<br/>
-    原因4、短信网关拥堵或出现异常<br/>
-    解决方法：短信网关拥堵或出现异常时会导致已发送的短信出现延时或丢失的情况，建议过段时间再尝试获取。<br/>
-    原因5、周围的人可以正常使用，但自己始终收不到<br/>
-    解决方法：可能是手机本身的原因，建议将手机卡换到别人的手机上再次进行尝试。<br/>
-    如果您遇到页面提示“验证码错误”，建议您确认验证码输入是否有误，如果获取了多条验证码，请输入最后收到的验证码。<br/>
-</p>
-<h3>8、如何退出登录？</h3>
-<p>在个人资料中，点击退出登录，即可退出当前账号。</p>
-<h3>9、绑定银行卡失败怎么办？</h3>
-<p>请检查您的真实姓名、身份证、银行卡信息、预留手机号是否全部填写正确。若仍无法解决，请致电趣车险客服进行咨询，客服热线 <a href="tel:400-8985880">400-8985880</a>。</p>
-<h3>10、如何更换银行卡？</h3>
-<p>您可以联系客服<a href="tel:400-8985880">400-8985880</a>进行提交相应材料，审核通过后，将为您解除原绑定银行卡，您可以自行绑定新的银行卡。</p>
-<h3>11、充值失败怎么办？</h3>
-<p>充值失败大部分原因是由于填写银行卡信息不正确引起，建议您检查后重试。如未能解决，请致电趣车险客服进行咨询，客服热线<a href="tel:400-8985880">400-8985880</a>，客服人员会第一时间为您处理</p>
-<h3>12、审核未通过怎么办？</h3>
-<p>用户可按照要求重新上传身份证等信息，重新进行审核</p>
-<h3>13、信用卡能不能充值？</h3>
-<p>趣车险只支持储蓄卡进行绑定和充值，暂不支持信用卡充值</p>
-<h3>14、充值有没有手续费？</h3>
-<p>趣车险充值不收取任何手续费。</p>
-<h3>15、可不可以多次申请？</h3>
-<p>可以，只要第一次申请成功，即可多次申请。第一次申请未成功需等待审核通过后再次申请。</p>
-<h3>16、如何还款？</h3>
-<p>自动还款，用户在还款日（北京时间0：00）之前足额存入绑定的银行卡，合作行将按时自动划扣。<br/>
-    手动还款，还款日期间，用户进入登录页面，在我的账单页点击立即还款
-</p>
-<h3>17、还款方式是什么？</h3>
-<p>还款方式为等额本息。</p>
-<h3>18、何时开始计息？</h3>
-<p>申请成功后，从用户申请日开始计息。</p>
-<h3>19、还款时间怎么算？</h3>
-<p>申请成功后，自申请日开始计算，默认下个月的今天就是用户的还款日，如还款日为每月30日或31日，若遇到天数不足30天或31天的月份，还款日为应还款当月的最后一日。如果还款日遇到法定假日或公休日，还款日期不顺延。</p>
-<h3>20、逾期如何处理？</h3>
-<p>用户未按约定时间还款，将会产生逾期违约金和罚息。<br/>
-    逾期违约金计算方式：当月应还本息的10%，最少不低于100元，每月单独计算。<br/>
-    罚息：每日按照用户剩余所有未还款本息的0.1%计算。<br/>
-</p>
-<h3>21、可以退保吗？</h3>
-<p>不可以退保。</p>
-<h3>22、退款会退到哪里？</h3>
-<p>用户绑定银行卡后若产生退回的费用将自动退回到用户银行卡账户中</p>
-<h3>23、可以替别人还款吗？</h3>
-<p>不可以，用户申请分期后只能使用自己实名的银行卡进行还款事项。</p>
-</body>
+        // 判断上传完成是否可以用
+        function panduan(a){
+            count++;
+            if(count===a){
+                shangchuan_btn.style.opacity="1";
+             }
+        }
+    </script>
 </html>
