@@ -89,15 +89,14 @@
     var _$nav = $('.j-nav');
     _$nav.on('touchstart', 'li', function () {
             var _index = $(this).index();
-            myScroll.scrollToElement(_$nav.find('li:nth-child(' + (_index+1) + ')').get(0), null, true, false);
             $(this).addClass('active').siblings().removeClass('active');
             /*滑动到指定索引的导航节点，并将其居中显示*/
             $(".u-content > div").eq($(this).index()).show().siblings('div').hide();
            
     });
-	_$nav.on('touchend', 'li', function () {
-        var _index = $(this).index();
-        myScroll.scrollToElement(_$nav.find('li:nth-child(' + (_index+1) + ')').get(0), null, true, false); })
+    _$nav.on('touchend', 'li', function () {
+           var _index = $(this).index();
+           myScroll.scrollToElement(_$nav.find('li:nth-child(' + (_index+1) + ')').get    (0), null, true, false); })
 </script>
 </body>
 </html>
