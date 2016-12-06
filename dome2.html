@@ -93,7 +93,7 @@
             $(this).addClass('active').siblings().removeClass('active');
             /*滑动到指定索引的导航节点，并将其居中显示*/
             $(".u-content > div").eq($(this).index()).show().siblings('div').hide();
-            myScroll.scrollToElement(_$nav.find('li:nth-child(' + (_index) + ')').get(0), null, true, false);
+            myScroll.scrollToElement(_$nav.find('li:nth-child(' + (_index+1) + ')').get(0), null, true, false);
     });
 </script>
 </body>
