@@ -87,7 +87,7 @@
     }
     document.addEventListener('touchmove', function (e) { e.preventDefault(); });
     var _$nav = $('.j-nav');
-    _$nav.on('click', 'li', function () {
+    _$nav.on('touchstart', 'li', function () {
             var _index = $(this).index();
             console.log(_index);
             $(this).addClass('active').siblings().removeClass('active');
