@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>更换银行卡</title>
+    <script src="js/rem.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "微软雅黑", 'Microsoft YaHei', "MicrosoftJhengHei", "华文细黑", "Helvetica", "Arial", "sans-serif";
+            font-size: 0.32rem;
+        }
+        a{
+            text-decoration: none;
+        }
+        .help-title {
+            position:relative;
+            width: 7.5rem;
+            height: 0.9rem;
+            line-height:0.9rem;
+            font-size:0.36rem;
+            background-color: #307ef2;
+            text-align:center;
+            color:#fff;
+        }
+        .help-title > img{
+            position:absolute;
+            top:0.28rem;
+            left:0.35rem;
+            width:0.24rem;
+            height:0.38rem;
+        }
+        .yh-card{
+            width: 6.5rem;
+            height:3.1rem;
+            margin:0.23rem 0.5rem;
+            background: #3190f4;
+            background: -webkit-linear-gradient(left, #3190f4, #307df2);
+            background: -moz-linear-gradient(left, #3190f4, #307df2);
+            background: -ms-linear-gradient(left, #3190f4, #307df2);
+            background: -o-linear-gradient(left, #3190f4, #307df2);
+            border-radius:0.16rem;
+            color: #ffffff;
+            overflow:hidden;
+        }
+        .yh-card-title{
+            width:6.5rem;
+            height:0.86rem;
+            line-height:0.86rem;
+            margin:0.3rem 0.3rem 0;
+        }
+        .yh-card-title>img{
+            float:left;
+            width: 0.86rem;
+            height:0.86rem;
+        }
+        .yh-card-title>p{
+            float:left;
+            height:0.86rem;
+            line-height:0.86rem;
+            font-size: 0.36rem;
+            margin-left:0.2rem;
+        }
+        .yh-card-number{
+            font-size: 0.5rem;
+        }
+        .yh-card-number,.yh-card-user{
+            height:0.9rem;
+            line-height:0.9rem;
+            margin-left:0.8rem;
+        }
+        .yh-user-title{
+            height:0.68rem;
+            line-height:0.68rem;
+            margin-left:0.3rem;
+            color:#111111;
+        }
+        .yh-user-box{
+            border-top:0.01rem solid #999999;
+            border-bottom:0.01rem solid #999999;
+        }
+        .yh-user-con{
+            position:relative;
+            width:7.2rem;
+            height:0.97rem;
+            line-height:0.97rem;
+            margin-left:0.3rem;
+            border-bottom:0.01rem solid #999999;
+            text-align:left;
+        }
+        .yh-user-con:last-child{
+            border-bottom:none;
+        }
+        .yh-user-con>span,.yh-user-con>input{
+            float:right;
+            margin-right:0.3rem;
+        }
+        .yh-user-con>input{
+            width:4rem;
+            height:0.97rem;
+            line-height:0.97rem;
+            border:none;
+            text-align: right;
+            margin-right:0.97rem;
+        }
+        .yh-user-con>img{
+            position:absolute;
+            top:0;
+            right:0;
+            width:0.42rem;
+            height:0.42rem;
+            line-height:0.42rem;
+            margin:0.275rem;
+
+        }
+        .yh-OK{
+            width:3.6rem;
+            height:0.7rem;
+            line-height:0.7rem;
+            margin:0.98rem 0 0 1.93rem;
+            border-radius:0.14rem;
+            text-align: center;
+            background:#7a7a7c;
+            color:#fff;
+        }
+        .yh-btn{
+            position:fixed;
+            left:0;
+            bottom:0;
+            width:7.5rem;
+            height:1rem;
+            line-height:1rem;
+            text-align: center;
+            color:#ffffff;
+            font-size: 0.36rem;
+            background:#307ef2;
+        }
+        /*弹窗*/
+        .oktitle{
+            position:fixed;
+            left:0;
+            top:0;
+            width:7.5rem;
+            height:14rem;
+            z-index:1;
+            /*解决了透明的问题*/
+            background:rgba(122,122,124, 0.6)!important;
+            filter:Alpha(opacity=60);
+            background:#7a7a7c;
+            /*background:#7a7a7c;*/
+            /*filter:alpha(Opacity=70);*/
+            /*-moz-opacity:0.7;*/
+            /*opacity: 0.7;*/
+        }
+        .tc-box{
+            position:relative;
+            width:6.8rem;
+            height:3.7rem;
+            margin:4.55rem auto 0;
+            border-radius:0.1rem;
+            background:#ffffff;
+            overflow:hidden;
+        }
+        .tc-iphon{
+            height:1.3rem;
+            line-height:1.3rem;
+            margin-left:0.45rem;
+        }
+        .tc-num{
+            margin-left:0.45rem;
+            height:1.1rem;
+            line-height:1.1rem;
+        }
+        .tc-num>input{
+            border:none;
+            width:4.2rem;
+            height:0.9rem;
+            padding-left:0.2rem;
+            border-radius:0.06rem;
+            background:#e1e1e1;
+        }
+        .tc-num>span{
+            display:inline-block;
+            width:1.6rem;
+            height:0.9rem;
+            line-height: 0.9rem;
+            margin-left:0.2rem;
+            border-radius:0.06rem;
+            text-align: center;
+            background:#307ef2;
+            color:#ffffff;
+        }
+        .tc-btn{
+            position:absolute;
+            left:0;
+            bottom:0;
+            width:6.8rem;
+            height:1rem;
+            line-height:1rem;
+            text-align: center;
+            background:#307ef2;
+            font-size:0.36rem;
+            color:#ffffff;
+        }
+        .tcquit{
+            position:absolute;
+            top:0.3rem;
+            right:0.3rem;
+            width:0.32rem;
+            height:0.32rem;
+        }
+    </style>
+</head>
+<body>
+<div class="help-title">
+    帮助中心<img src="img/back.png" alt="返回">
+</div>
+<div class="yh-card">
+    <div class="yh-card-title">
+        <img src="img/bankicon.png" alt="银行图标"><p>招商银行</p>
+    </div>
+    <p class="yh-card-number">6220************6938</p>
+    <p class="yh-card-user">持卡人：王涛</p>
+</div>
+<p class="yh-user-title">请输入更换后的银行卡信息</p>
+<div class="yh-user-box">
+    <p class="yh-user-con">持卡人<span>王涛</span></p>
+    <p class="yh-user-con">身份证号<span >130***********2839</span></p>
+    <p class="yh-user-con">银行卡号<input type="text" placeholder="请输入银行卡号" ><img src="img/inputqc.png" alt=""></p>
+    <p class="yh-user-con">预留手机号 <input type="text" placeholder="请输入手机号" ><img src="img/inputqc.png" alt=""></p>
+</div>
+<div class="yh-OK">更换银行卡成功</div>
+<div class="yh-btn">更换银行卡</div>
+<!--弹窗-->
+<div class="oktitle">
+    <div class="tc-box">
+        <p class="tc-iphon">短信验证码发送至：<span>135****9997</span></p>
+        <p class="tc-num"><input type="text" placeholder="请输入验证码" maxlength="6"><span>重新获取</span></p>
+        <div class="tc-btn">确认绑卡</div>
+        <img src="img/tcquit.png" alt="qx" class="tcquit">
+    </div>
+</div>
+</body>
+</html>

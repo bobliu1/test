@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <script src="js/rem.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "微软雅黑","Ttimesnewroma", 'Microsoft YaHei', "MicrosoftJhengHei", "华文细黑", "Helvetica", "Arial", "sans-serif";
+            font-size: 0.32rem;
+        }
+        a{
+            text-decoration: none;
+        }
+        .help-title {
+            position:relative;
+            width: 7.5rem;
+            height: 0.9rem;
+            line-height:0.9rem;
+            font-size:0.36rem;
+            background-color: #307ef2;
+            text-align:center;
+            color:#fff;
+        }
+        .help-title > img{
+            position:absolute;
+            top:0.28rem;
+            left:0.35rem;
+            width:0.24rem;
+            height:0.38rem;
+        }
+        .bill-per{
+            width:7.5rem;
+            height:2.5rem;
+            background-image: url("img/mybillbg.png") ;
+            border-bottom:1px solid #999;
+            margin-bottom: 0.2rem;
+        }
+        .help-per-box{
+            width:6.7rem;
+            height:1.6rem;
+            margin:0 auto;
+        }
+        .bill--xinxi{
+            float:left;
+            width:4rem;
+            height:2rem;
+            margin: 0.1rem 0 0 0.3rem;
+            text-align: left;
+            color:#fff;
+        }
+        .bill-name{
+            display:block;
+            width:4rem;
+            height:0.6rem;
+            line-height: 0.6rem;
+        }
+        .bill-rmb{
+            width:4rem;
+            height:1.3rem;
+            line-height: 1.3rem;
+            font-size: 0.68rem;
+        }
+        .help-btn{
+            float:right;
+            width:1.8rem;
+            height:0.68rem;
+            line-height:0.68rem;
+            margin-top: 0.44rem;;
+            text-align:center;
+            color:#307ef2;
+            background:#fff;
+            border-radius: 0.08rem;
+
+        }
+        .help-con{
+            width:7.5rem;
+            border-top: 0.01rem solid #999;
+            border-bottom: 0.01rem solid #999;
+        }
+        .help-con-n{
+            width:7.2rem;
+            height:1rem;
+            line-height: 1rem;
+            margin-left:0.3rem;
+            color:#111111;
+            border-bottom: 0.01rem solid #999999;
+        }
+        .help-con-n:last-child{
+            border-bottom: none;
+        }
+        .help-con-n img{
+            float:right;
+            width:0.2rem;
+            height:0.32rem;
+            margin:0.36rem 0.3rem 0 0.2rem;
+        }
+        .help-con-n > p{
+            float:right;
+            color:#666666;
+            height:1rem;
+        }
+        .help-con-n > p:nth-child(2){
+            color:#e60012;
+        }
+        .help-foot{
+            position:fixed;
+            left:0;
+            bottom:0;
+            width:7.5rem;
+            height:0.86rem;
+            line-height: 0.86rem;
+            border-top: 0.02rem solid #999;
+            /*margin-top: 1.75rem;*/
+            text-align: center;
+        }
+        .help-foot>span{
+            display:inline-block;
+            width:2.48rem;
+            height:0.4rem;
+            line-height: 0.4rem;
+        }
+        .help-foot>span:nth-child(2){
+            width:2.48rem;
+            border-left:0.02rem solid #999;
+            border-right:0.02rem solid #999;
+        }
+        .help-color{
+            color:#307ef2;
+        }
+        .bill-data{
+            float:left;
+            width:2.18rem;
+            height:2.48rem;
+            background-image: url("img/mybilldata.png");
+            background-size:contain;
+            text-align: center;
+            color:#111111;
+        }
+        .bill-data-t{
+            margin-top: 0.3rem;
+            font-size:0.28rem;
+        }
+        .bill-data-f{
+            font-size:1.1rem;
+        }
+        .shu{
+            font-size:0.35rem;
+        }
+        .font-e60012{
+            color:#e60012;
+        }
+    </style>
+</head>
+<body>
+<div class="help-title">
+    我的帐单<img src="img/back.png" alt="返回">
+</div>
+<div class="bill-per">
+    <div class="help-per-box">
+        <div class="bill-data">
+            <p class="bill-data-t">2016年12月</p>
+            <p class="bill-data-f">16</p>
+        </div>
+        <p class="bill--xinxi">
+            <span class="bill-name">今日待还款（元）</span>
+            <span class="bill-rmb">0</span>
+        </p>
+    </div>
+</div>
+<div class="help-con">
+    <div class="help-con-n">等待审核<p><span class="shu">3</span>笔 <img src="img/JTright.png" alt="JTright"></p></div>
+    <div class="help-con-n">审核未通过<p><span class="shu font-e60012">4</span>笔<img src="img/JTright.png" alt="JTright"></p></div>
+    <div class="help-con-n">正在还款<p><span class="shu">3</span>笔<img src="img/JTright.png" alt="JTright"></p></div>
+    <div class="help-con-n">已逾期<p><span class="shu font-e60012">4</span>笔<img src="img/JTright.png" alt="JTright"></p></div>
+    <div class="help-con-n">已还清<p><span class="shu">3</span>笔<img src="img/JTright.png" alt="JTright"></p></div>
+    <div class="help-con-n">已取消<p><span class="shu">3</span>笔<img src="img/JTright.png" alt="JTright"></p></div>
+</div>
+<div class="help-foot">
+    <span>申请分期</span><!--
+    --><span class="help-color">我的帐单</span><!--
+    --><span>帮助中心</span>
+</div>
+</body>
+</html>

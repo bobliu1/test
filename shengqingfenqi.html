@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>申请分期</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "微软雅黑","Ttimesnewroma", 'Microsoft YaHei', "MicrosoftJhengHei", "华文细黑", "Helvetica", "Arial", "sans-serif";
+            font-size: 0.32rem;
+        }
+        a{
+            text-decoration: none;
+        }
+        .help-title {
+            position:relative;
+            width: 7.5rem;
+            height: 0.9rem;
+            line-height:0.9rem;
+            font-size:0.36rem;
+            background-color: #307ef2;
+            text-align:center;
+            color:#fff;
+        }
+        /*.help-title > img{*/
+            /*position:absolute;*/
+            /*top:0.28rem;*/
+            /*left:0.35rem;*/
+            /*width:0.24rem;*/
+            /*height:0.38rem;*/
+        /*}*/
+        .jgbm{
+
+            width:7.5rem;
+            text-align: center;
+            color:#111111;
+            margin-top:0.5rem;
+        }
+        .jgbm-title>img{
+            width:6.24rem;
+            height:0.08rem;
+        }
+        .jgbm-title{
+            position:relative;
+            text-align: center;
+        }
+        .jgbm-title>span{
+            position:absolute;
+            top:0.05rem;
+            left:3.11rem;
+        }
+        .jgbm-input{
+            width:6.2rem;
+            height:1rem;
+            line-height:1rem;
+            text-align: center;
+            border:0.02rem solid #999999;
+            border-radius:0.08rem;
+            margin-top:0.38rem;
+            font-size: 0.4rem;
+        }
+        .jg-name{
+            margin-top:0.3rem;
+            font-size: 0.24rem;
+            color:#307ef2;
+        }
+        .cont{
+            margin-top: 0.7rem;
+            color:#111111;
+        }
+        .cont .jgbm-title>span{
+            left:2.31rem;
+        }
+        .tbfq{
+            margin-top:0.38rem;
+            border-top:0.01rem solid #999;
+        }
+        .bdzy,.tbfq{
+            width:7.5rem;
+            height:1.54rem;
+            line-height: 1.54rem;
+        }
+        .tbfq-img,.bdzy-img{
+            float:left;
+            width:0.66rem;
+            height:0.62rem;
+            margin:0.37rem 0.24rem 0 0.75rem;
+        }
+        .sq-box{
+            float:left;
+            height:1.54em;
+            line-height:1.54em;
+            text-align: left;
+        }
+        .sq-title{
+            margin-top: 0.25rem;
+            font-size: 0.36rem;
+        }
+        .sq-describe{
+            font-size: 0.28rem;
+            color:#666666;
+        }
+        .clearfix:after {
+            content:".";
+            display:block;
+            height:0;
+            visibility:hidden;
+            clear:both;
+        }
+        .JTright{
+            float:right;
+            width:0.2rem;
+            height:0.32rem;
+            margin:0.61rem 0.3rem 0 0;
+        }
+        .cont-line{
+            width:7.2rem;
+            height:0.01rem;
+            background-color: #999999;
+            margin-left:0.3rem;
+        }
+        .bdzy{
+            border-bottom:0.01rem solid #999;
+        }
+        /* 下面的三栏*/
+        .help-foot{
+            position:fixed;
+            bottom:0;
+            left:0;
+            width:7.5rem;
+            height:0.86rem;
+            line-height: 0.86rem;
+            border-top: 1px  solid #999;
+            /*margin-top: 3.15rem;*/
+            text-align: center;
+        }
+        .help-foot>span{
+            display:inline-block;
+            width:2.48rem;
+            height:0.4rem;
+            line-height: 0.4rem;
+        }
+        .help-foot>span:nth-child(2){
+            width:2.48rem;
+            border-left:0.02rem solid #999;
+            border-right:0.02rem solid #999;
+        }
+
+        .help-color{
+            color:#307ef2;
+        }
+    </style>
+</head>
+<body>
+<div class="help-title">
+   申请分期 <!--<img src="img/back.png" alt="返回">-->
+</div>
+<div class="jgbm">
+    <p class="jgbm-title"><img src="img/jgjtbg.png" alt=""><span>机构编码</span></p>
+    <input type="text" value="30297389" class="jgbm-input">
+    <p class="jg-name">广西汽车物流运输行业协会</p>
+</div>
+<div class="cont">
+    <p class="jgbm-title"><img src="img/jgfqbg.png" alt=""><span>请选择您的分期类型</span></p>
+    <div class="tbfq">
+        <img src="img/sq1.png" alt="" class="tbfq-img">
+        <div class="sq-box"><p class="sq-title">投保分期</p><p class="sq-describe">新投保或续保的保单</p></div>
+        <img src="img/JTright.png" alt="" class="JTright">
+    </div>
+    <div class="cont-line"></div>
+    <div class="bdzy">
+        <img src="img/sq2.png" alt="" class="tbfq-img">
+        <div class="sq-box"><p class="sq-title">保单质押</p><p class="sq-describe">已投保的剩余期限保单</p></div>
+        <img src="img/JTright.png" alt="" class="JTright">
+    </div>
+</div>
+<div class="help-foot">
+    <span class="help-color">申请分期</span><!--
+    --><span>我的帐单</span><!--
+    --><span >帮助中心</span>
+</div>
+</body>
+</html>
+<script src="js/rem.js"></script>
